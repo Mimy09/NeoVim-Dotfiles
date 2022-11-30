@@ -1,6 +1,7 @@
 
 " --- VIM SETTINGS --- "
 
+set shada="'50,<1000,s100,:0,n~/.config/nvim/shada"
 
 " SETTINGS ------------------------------------ {{{
 let mapleader = " "             " map leader to Space
@@ -51,7 +52,6 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'                       " Adds a gutter that shows what lines have been edited
     Plug 'psliwka/vim-smoothie'                         " Smooths the scrolling
     Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Adds code completion for c++
-    Plug 'wfxr/minimap.vim'                             " Adds a scroll minimap similar to vscode
 call plug#end()
 
 " Enable git gutter highlighting
@@ -160,6 +160,10 @@ inoremap <C-up> <Esc>:m .-2<CR>==gi
 vnoremap <C-down> :m '>+1<CR>gv=gv
 vnoremap <C-up> :m '<-2<CR>gv=gv
 
+" Copying to clipboard
+nnoremap <Leader>y "+yy
+nnoremap <Leader>p "+p
+
 " C-v is used for pasting in win term
 nnoremap q <C-v>
 
@@ -178,6 +182,7 @@ nmap <C-B> :Buffers<CR>
 nmap <Leader>bl :BLines<CR>
 nmap <Leader>bh :History:<CR>
 nmap <Leader>bg :History<CR>
+nmap <Leader>. :Tags<CR>
 
 " Cpp formating
 nnoremap <S-f> :ClangFormat<CR>
